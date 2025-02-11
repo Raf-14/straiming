@@ -1,5 +1,5 @@
  import React from "react";
-import Button from "./Button";
+
 
  interface BarreSongProps {
      song: string;
@@ -7,7 +7,8 @@ import Button from "./Button";
      image: string;
      onClick?: () => void;
  }
- 
+
+
  export const BarreSong: React.FC<BarreSongProps> = ({ song, artist, image, onClick }) => {
      return (
         <div className="container-barre w-full p-5 cursor-pointer rounded-2xl hover:bg-zinc-100">
