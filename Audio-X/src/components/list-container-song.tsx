@@ -1,5 +1,5 @@
  import React from "react";
-import Button from "./Button";
+
 
  interface BarreSongProps {
      song: string;
@@ -7,16 +7,17 @@ import Button from "./Button";
      image: string;
      onClick?: () => void;
  }
- 
+
+
  export const BarreSong: React.FC<BarreSongProps> = ({ song, artist, image, onClick }) => {
      return (
-        <div className="container-barre w-full p-5 cursor-pointer rounded-2xl hover:bg-zinc-100">
+        <div className="container-barre w-full p-5 cursor-pointer rounded-2xl hover:bg-gray-700">
                   <div className="flex items-center justify-between">
                       <div className="cont-profile flex  justify-center items-center">
                       <img className="profile-img size-12 rounded-xl" src={image} alt="Profile"/>
                       <div className="profile-name flex flex-col px-5">
-                        <span className="text-sm font-bold capitalize">{artist}</span>
-                        <span className="text-sm font-bold capitalize">{song}</span>
+                        <span className="text-sm font-bold text-zinc-50 capitalize">{artist}</span>
+                        <span className="text-sm font-bold text-zinc-50 capitalize">{song}</span>
                       </div>
                     </div>
                     <div className="container-song">

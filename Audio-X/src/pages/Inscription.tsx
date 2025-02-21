@@ -27,17 +27,18 @@ interface SignUpProps {
     console.log('Form submitted:', formData);
   };
   return (
-    <form onSubmit={handleSubmit}
-    className={`w-full max-w-md mx-auto p-6 flex flex-col justify-center items-center`}
+    <div className="bg-gray-800 w-full h-screen">
+      <form onSubmit={handleSubmit}
+    className={`w-full max-w-2xl mx-auto p-6 flex flex-col justify-center items-center border border-gray-700 shadow-xl rounded-md`}
     >
-        <h2 className="text-2xl font-semibold text-gray-800 uppercase">Salut</h2>
-        <h3 className="text-xl font-semibold text-gray-800 mt-4">Inscrivez-vous pour commencer à écouter tous vos artiste</h3>
+        <h2 className="text-2xl font-bold text-zinc-50 uppercase">Salut</h2>
+        <h3 className="text-xl font-semibold text-zinc-100 mt-4">Inscrivez-vous pour commencer à écouter tous vos artiste</h3>
         <Input
           type="text"
           placeholder="username"
           value={formData.username}
           onChange={handleChange}
-          className=" border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+          className="border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
         />
         <Input
           type="email"
@@ -56,34 +57,34 @@ interface SignUpProps {
         <Input
         type="password"
         placeholder="confirm password"
+        value={formData.password}
+        onChange={handleChange}
         className="border border-zinc-200 font-serif focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
         />
         <Button
         type="submit"
         title="Register"
-        className="mt-4 w-full"
+         className="mt-4 w-xl bg-purple-600 rounded-2xl m-2 hover:bg-purple-400 text-white font-serif text-uppercase font-bold"
         disabled={!formData.username ||!formData.email ||!formData.password}
         />
-        <p className="text-gray-600 mt-4">Already have an account? <a href="./connexion.tsx" className="text-blue-600">Sign In</a></p>
+        <p className="text-zinc-100 mt-4">Already have an account? <a href="./connexion.tsx" className="text-blue-600">Sign In</a></p>
         <p className="text-gray-600 mt-4"><span className="underline mr-5 text-black">Linkdedine</span> ou continuer avec <span className="underline text-black ml-5">Tinder</span></p>
-        <div className="container-button flex justify-center items-center ">
+        <div className="container-button w-md flex justify-center items-center gap-5">
             <Button
             type="button"
             title="Google (français)"
-            className="mt-4 w-xs"
+            className="mt-4 w-xs bg-white rounded-md"
             disabled={false}
             />
             <Button
             type="button"
             title="Facebook"
-            className="mt-4 w-xs"
+            className="mt-4 w-xs bg-white rounded-md"
             disabled={false}
             />
         </div>
-
-
-  
     </form>
+    </div>
   )
 }
 
