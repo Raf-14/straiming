@@ -3,23 +3,27 @@ import { BarreSong } from '../components/list-container-song';
 import Barre from '../components/Barre';
 import Asisdebarre from '../components/Asisdebarre';
 import { cards, cards2, ListContainerSong } from '../utils/cards'
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
  
 
   return (
-    <div className="container w-full h-full p-3 flex bg-gray-950">
+    <div className="container max-w-full h-full p-3 flex bg-gray-800">
         <Asisdebarre />
   
       {/* Main content */}
-      <div className="Main  w-3/4 h-full bg-white rounded-xl px-8 py-4 ml-auto transition-transform transform-gpu ease-in-out duration-300">
+      <div className="Main h-full w-full rounded-xl px-8 py-4 ml-auto transition-transform transform-gpu ease-in-out duration-300">
       {/* Header */}
-        <div className="cont-profile flex  justify-between items-center">
-            <h1 className="text-2xl font-bold">Bonjour, <span>John Doe</span></h1>
-            <div className="cont-img flex">
-                <img src="../../public/assets/notify.png" alt="avatar" className="size-10 rounded-full object-cover" />
-                <img src="../../public/assets/profile.jpg" alt="avatar" className="size-10 rounded-full object-cover" />
-            </div>
+        <div className="cont-profile flex  justify-between items-center p-3">
+            <h1 className="text-2xl font-bold text-white">Bonjour , <span> John Doe</span></h1>
+            <div className="cont-profile ml-20 flex justify-center items-center">
+            <img src="../../public/assets/notify.png" alt="notify icon" className="size-16 object-cover" />
+            {/* <img src="https://img.icons8.com/color/48/000000/expand-arrow.png" alt="dropdown" /> */}
+            <Link to="/pages/Profile.tsx">
+                <img src="https://img.icons8.com/color/48/000000/user-male-circle.png" alt="profile" />
+            </Link>
+          </div>
         </div>
         {/* feature */}
         <Barre
@@ -29,7 +33,7 @@ const HomePage = () => {
 
         />
         {/* Card of feature */}
-        <div className="mt-5">
+        <div className="mt-5 w-full">
             <CardContainer
             cards={cards}
             />
@@ -65,14 +69,9 @@ const HomePage = () => {
                 image={song.image}
                 onClick={() => alert(`yu clicked for ${song.artist}`)}
                 />
-            ))
-
-            }
-            
+            ))}
         </div>
-        
       </div>
-     
     </div>
   );
 };

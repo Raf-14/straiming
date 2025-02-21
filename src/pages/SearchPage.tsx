@@ -8,7 +8,7 @@ import { cards3, ListContainerSong } from '../utils/cards'
 
 export default function SearchPage() {
   return (
-    <div className="flex flex-col bg-gray-800 min-h-screen">
+    <div className="flex flex-col bg-gray-800 min-h-screen p-5">
         {/* AsideBar */}
         <Asisdebarre />
         {/* Search Bar */}
@@ -40,7 +40,7 @@ export default function SearchPage() {
         {/* Récommandations */}
         <div className="m-5 p-5 text-white">
             <Barre
-            title="Recommandations"
+            title="Basée sur ce que vous aimé"
             buttonText="Voir plus"
             buttonLink="/pages/recommandation.tsx"
             />
