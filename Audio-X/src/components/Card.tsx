@@ -26,7 +26,7 @@ export const Card = ({ title, image, description }: CardProps) => {
 
 export const CardContainer = ({ cards }: { cards: CardProps[] }) => {
     return (
-        <div className="flex justify-center items-center gap-2 flex-wrap">
+        <div className="grid grid-cols-2 md:grid-cols-4 items-center gap-10">
             {cards.map((card) => (
                 <Card key={card.title} {...card} />
             ))}

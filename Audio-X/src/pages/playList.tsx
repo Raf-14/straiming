@@ -1,69 +1,53 @@
-import { useState } from "react";
-import { Home, Search, BookOpen, Bell, User, Play, Rewind, FastForward, Volume2 } from "lucide-react";
-import { motion } from "framer-motion";
 import Asisdebarre from '../components/Asisdebarre';
-const MusicPlayer = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+import { Link } from 'react-router-dom';
+import { ListContainerSong } from '../utils/cards';
+import { BarreSong } from '../components/list-container-song';
 
+const PlayList = () =>{
   return (
-    <div className="flex h-screen bg-black text-white">
-      {/* Sidebar */}
-      <motion.aside
-        initial={{ x: -100 }}
-        animate={{ x: 0 }}
-        transition={{ duration: 0.5 }}
-        className="w-20 h-full bg-gray-900 p-4 flex flex-col space-y-6 items-center"
-      >
-        {/* <Home className="text-gray-400 hover:text-white cursor-pointer" size={28} />
-        <Search className="text-gray-400 hover:text-white cursor-pointer" size={28} />
-        <BookOpen className="text-gray-400 hover:text-white cursor-pointer" size={28} /> */}
+    <div className="bg-gray-800 max-w-full h-screen relative">
+        {/* Assidbare */}
         <Asisdebarre />
-      </motion.aside>
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col justify-between p-8">
-        {/* Background Image */}
-        <div
-          className="h-2/3 bg-cover bg-center rounded-lg"
-          style={{ backgroundImage: "url('../../public/assets/back1.jpg')" }}
-        ></div>
-        
-        {/* Music Controls */}
-        <div className="p-4 bg-gradient-to-t from-black via-gray-900 to-transparent rounded-lg">
-          <h2 className="text-2xl font-bold">Melbourne Sunset</h2>
-          <p className="text-gray-400">3000 Days</p>
-          
-          {/* Progress Bar */}
-          <div className="w-full h-1 bg-gray-700 rounded-full mt-4 relative">
-            <div className="w-1/2 h-full bg-purple-500 rounded-full"></div>
-          </div>
-          <div className="flex justify-between text-sm mt-2 text-gray-400">
-            <span>1:39</span>
-            <span>2:47</span>
-          </div>
-          
-          {/* Player Controls */}
-          <div className="flex items-center justify-center space-x-6 mt-4">
-            <Rewind className="cursor-pointer" size={28} />
-            <button
-              className="bg-purple-500 p-4 rounded-full"
-              onClick={() => setIsPlaying(!isPlaying)}
-            >
-              <Play className="text-white" size={28} />
-            </button>
-            <FastForward className="cursor-pointer" size={28} />
-            <Volume2 className="cursor-pointer" size={28} />
-          </div>
+         {/* Top Right Icons */}
+        <div className="absolute top-4 right-4 flex items-center space-x-4">
+            <div className="cont-profile ml-20 flex justify-center items-center">
+                <img src="../../public/assets/notify.png" alt="notify icon" className="size-10 md:size-16 object-cover" />
+                <Link to="/pages/Profile.tsx">
+                    <img src="https://img.icons8.com/color/48/000000/user-male-circle.png" alt="profile" className="size-8 md:size-12 object-cover"/>
+                </Link>
+            </div>
         </div>
-      </div>
+              {/* Main Content */}
+        <div className="flex-1 flex flex-col justify-between w-full h-screen">
+                {/* Background Image */}
+            <div
+            className="h-2/3 bg-cover bg-center rounded-lg"
+            style={{ backgroundImage: "url('../../public/assets/back1.jpg')" }}
+            ></div>
 
-      {/* Top Right Icons */}
-      <div className="absolute top-4 right-4 flex items-center space-x-4">
-        <Bell className="text-gray-400 hover:text-white cursor-pointer" size={24} />
-        <User className="text-gray-400 hover:text-white cursor-pointer" size={24} />
-      </div>
+                {/* Section profile */}
+            <div className="flex justify-between items-center mx-5">
+                <div className="left flex flex-col gap-1 items-center">
+                    <h2 className="text-2xl font-extrabold font-sans text-white">John</h2>
+                    <p className="text-gray-400">12k d'écoute</p>
+                    <div className="flex items-center gap-2">
+                        <img src="../../public/assets/heart.png" alt="icon heart" className='size-8'/>
+                        <span className="font-extrabold text-2xl text-white">...</span>
+                    </div>
+                </div>
+                {/* Play button rigth */}
+                <div className="rigth">
+                    <img src="../../public/assets/Play.png" alt="icon play" className="size-18" />
+                </div>
+            </div>
+            {/* Section list of song */}
+            <div>
+            {ListContainerSong.map((song) => (<BarreSong key={song.artist} artist={song.artist} song={song.song} image={song.image} onClick={() => alert(`yu clicked for ${song.artist}`)}/>))}
+            </div>
+        </div>
     </div>
-  );
-};
+  )
+}
 
-export default MusicPlayer;
+export default PlayList;
