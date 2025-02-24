@@ -1,14 +1,27 @@
 import { useState } from "react";
-import { Bell, User, Play, Rewind, FastForward, Volume2 } from "lucide-react";
-// import { motion } from "framer-motion";
+import { Bell, User, Play, Rewind, FastForward, Volume2, ArrowLeft } from "lucide-react";
+import { ListContainerSong } from '../utils/cards'
 import Asisdebarre from '../components/Asisdebarre';
+import { useParams } from 'react-router';
+import { Link } from 'react-router';
+
 const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const { id } = useParams<{id: string}>();
+  const play = ListContainerSong.find((s) => s.id === id)
 
+  const handleChoice = () => {
+    setIsPlaying(!isPlaying)
+    console.log(isPlaying)
+    alert('isPlaying')
+  }
+  if(!play){
+    return <h2 className="text-black mt-50 text-2xl text-center">Chanson non trouvée</h2>;
+}
   return (
     <div className="flex h-screen bg-black text-white">
-      {/* Sidebar */}
-      <Asisdebarre />
+        {/* return to previews pages */}
+
       {/* Main Content */}
       <div className="flex-1 flex flex-col justify-between p-8">
         {/* Background Image */}
@@ -19,8 +32,8 @@ const MusicPlayer = () => {
         
         {/* Music Controls */}
         <div className="p-4 bg-gradient-to-t from-black via-gray-900 to-transparent rounded-lg">
-          <h2 className="text-2xl font-bold">Melbourne Sunset</h2>
-          <p className="text-gray-400">3000 Days</p>
+          <h2 className="text-2xl font-bold">{play.artist}</h2>
+          <p className="text-gray-400">{play.song}</p>
           
           {/* Progress Bar */}
           <div className="w-full h-1 bg-gray-700 rounded-full mt-4 relative">
@@ -36,7 +49,7 @@ const MusicPlayer = () => {
             <Rewind className="cursor-pointer" size={28} />
             <button
               className="bg-purple-500 p-4 rounded-full cursor-pointer"
-              onClick={() => setIsPlaying(!isPlaying)}
+              onClick={handleChoice}
             >
               <Play className="text-white" size={28} />
             </button>
@@ -50,6 +63,12 @@ const MusicPlayer = () => {
       <div className="absolute top-4 right-4 flex items-center space-x-4">
         <Bell className="text-gray-400 hover:text-white cursor-pointer" size={24} />
         <User className="text-gray-400 hover:text-white cursor-pointer" size={24} />
+      </div>
+      {/* Top left Icons */}
+      <div className="absolute top-4 left-4 flex items-center space-x-4">
+        <Link to={`/pages/PlayList/${id}`} className="flex items-center justify-center hover:bg-purple-400 size-12 bg-purple-500 rounded-full">
+            <ArrowLeft color="#f6efef" strokeWidth={3} /> 
+        </Link>
       </div>
     </div>
   );

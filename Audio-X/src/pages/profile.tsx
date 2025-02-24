@@ -13,7 +13,7 @@ const Profile = () =>{
       <div className="header">
         {/* Top bottom right */}
         <div className="p-10 flex items-center gap-8">
-          <img src="../../public/assets/image1.jpg" alt="image user" className="object-cover size-22 md:size-62 rounded-full" />
+          <img src="/assets/image1.jpg" alt="image user" className="object-cover size-22 md:size-62 rounded-full" />
          <div className="left-div">
               {/* name and Edit profile link */}
               <div className="flex items-center justify-between w-62 mt-8">
@@ -30,8 +30,8 @@ const Profile = () =>{
          {/* Top Right Icons */}
         <div className="absolute top-4 right-4 flex items-center space-x-4">
         <div className="cont-profile ml-20 flex justify-center items-center">
-            <img src="../../public/assets/notify.png" alt="notify icon" className="size-10 md:size-16 object-cover" />
-            <Link to="/pages/Profile.tsx">
+            <img src="/assets/notify.png" alt="notify icon" className="size-10 md:size-16 object-cover" />
+            <Link to="/pages/Profile">
                 <img src="https://img.icons8.com/color/48/000000/user-male-circle.png" alt="profile" className="size-8 md:size-16 object-cover"/>
             </Link>
           </div>
@@ -52,13 +52,13 @@ const Profile = () =>{
         {/* song list */}
         <div className="list-song">
               {ListContainerSong.map((song) => (
-                  <BarreSong
-                  key={song.artist}
-                  artist={song.artist}
-                  song={song.song}
-                  image={song.image}
-                  onClick={() => alert(`yu clicked for ${song.artist}`)}
-                  />
+                   <BarreSong
+                   key={song.id}
+                   id={song.id}
+                   artist={song.artist}
+                   song={song.song}
+                   image={song.image}
+                 />
               ))}
         </div>
       </div>

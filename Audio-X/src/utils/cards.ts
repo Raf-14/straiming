@@ -173,28 +173,33 @@ export const cards4 = [
 
 export const ListContainerSong = [
     {
-        artist: 'beatles',
-        song: 'afro beate',
-        image: '../../public/assets/profile.jpg'
+        id: "1",
+        artist: "beatles",
+        song: "afro beate",
+        image: "/assets/profile.jpg"
     },
     {
-        artist: 'elephants',
-        song: 'animal',
-        image: '../../public/assets/profile.jpg'
+        id: "2",
+        artist: "elephants",
+        song: "animal",
+        image: "/assets/profile.jpg"
     },
     {
-        artist: 'giraffes',
-        song: 'herbivores',
-        image: '../../public/assets/profile.jpg'
+        id: "3",
+        artist: "giraffes",
+        song: "herbivores",
+        image: "/assets/profile.jpg"
     },
     {
-        artist: 'lions',
-        song: 'lion',
-        image: '../../public/assets/profile.jpg'
+        id: "4",
+        artist: "lions",
+        song: "lion",
+        image: "/assets/profile.jpg"
     },
     {
-        artist: 'beetles',
-        song: 'afro beate',
-        image: '../../public/assets/profile.jpg'
+        id: "5",
+        artist: "beetles",
+        song: "afro beate",
+        image: "/assets/profile.jpg"
     }
-]
+];

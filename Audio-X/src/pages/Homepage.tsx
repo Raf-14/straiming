@@ -1,4 +1,4 @@
-import { CardContainer } from '../components/Card';
+import { CardContainer, Card } from '../components/Card';
 import { BarreSong } from '../components/list-container-song';
 import Barre from '../components/Barre';
 import Asisdebarre from '../components/Asisdebarre';
@@ -23,7 +23,7 @@ const HomePage = () => {
               {/* <span className="bg-red-500 rounded-full text-white">0</span> */}
             </Link>
             {/* <img src="https://img.icons8.com/color/48/000000/expand-arrow.png" alt="dropdown" /> */}
-            <Link to="/pages/Profile.tsx">
+            <Link to="/pages/Profile">
                 <img src="https://img.icons8.com/color/48/000000/user-male-circle.png" alt="profile" />
             </Link>
           </div>
@@ -32,7 +32,7 @@ const HomePage = () => {
         <Barre
          title= "Mes pages favorites"
          buttonText = "voir plus"
-         buttonLink='/pages/inscrption.tsx'
+         buttonLink='/pages/inscrption'
 
         />
         {/* Card of feature */}
@@ -45,34 +45,32 @@ const HomePage = () => {
         <Barre
          title= "Recommandations"
          buttonText = "voir plus"
-         buttonLink='/pages/inscrption.tsx'
+         buttonLink='/pages/inscrption'
 
         />
         {/* card propose */}
-        <div className="mt-5">
-            <CardContainer
-            cards={cards2}
-            />
+        <div className="mt-5 flex justify-center items-center">
+          <CardSection />
         </div>
 
          {/* Populare song */}
          <Barre
          title= "Chansons populaires"
          buttonText = "voir plus"
-         buttonLink='/pages/inscrption.tsx'
+         buttonLink='/pages/inscrption'
 
         />
         {/* List popular song */}
         <div className="mt-5">
-            {ListContainerSong.map((song) => (
-                <BarreSong
-                key={song.artist}
-                artist={song.artist}
-                song={song.song}
-                image={song.image}
-                onClick={() => alert(`yu clicked for ${song.artist}`)}
-                />
-            ))}
+          {ListContainerSong.map((song) => (
+            <BarreSong
+              key={song.id}
+              id={song.id}
+              artist={song.artist}
+              song={song.song}
+              image={song.image}
+            />
+          ))}
         </div>
       </div>
     </div>
@@ -80,3 +78,42 @@ const HomePage = () => {
 };
 
 export default HomePage;
+const CardSection = () => {
+  return (
+    <div className="mt-5">
+      <div className="grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-48">
+        {cardsData.map((card, index) => (
+          <div className="flex flex-col justify-center items-center relative">
+          <div className="card w-90 md:w-86 h-50 cursor-pointer">
+            <div className="w-full h-full overflow-hidden rounded-2xl">
+              <img className="object-cover w-full h-full" src={card.image} alt={card.title} />
+            </div>
+            <div className="rounded-2xl card-body absolute top-0 w-90 md:w-86 h-50 flex justify-center items-center flex-col bg-blue-700/50">
+              <h5 className="card-title font-bold text-zinc-100 font-serif text-xl">{card.title}</h5>
+              <p className="card-text font-thin text-white font-sans text-2xl">{card.description}</p>
+            </div>
+          </div>
+        </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+// Données des cartes pour tester
+const cardsData: CardProps[] = [
+  {
+    title: "Carte 1",
+    image: "/assets/profile.jpg",
+    description: "Description 1",
+  },
+  {
+    title: "Carte 2",
+    image: "/assets/profile.jpg",
+    description: "Description 2",
+  },
+  {
+    title: "Carte 3",
+    image: "/assets/profile.jpg",
+    description: "Description 3",
+  },
+];

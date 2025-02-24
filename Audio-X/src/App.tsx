@@ -20,8 +20,8 @@ export default function App() {
             <Route path="/pages/Searchpage" element = { <SearchPage />} />
             <Route path="/pages/Bibliotehque" element = { <Bibliotheque />} />
             <Route path="/pages/Profile" element = { <Profile />} />
-            <Route path="/pages/PlayList" element = { <PlayList />} />
-            <Route path="/pages/playerMusic/3" element = { <MusicPlayer />} />
+            <Route path="/pages/PlayList/:id" element = { <PlayList />} />
+            <Route path="/pages/playerMusic/:id" element = { <MusicPlayer />} />
             <Route path="*" element = {<h1> cannot find page</h1>} />
           </Routes>
         </Router>
