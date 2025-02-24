@@ -26,15 +26,13 @@ export default function SearchPage() {
         {/* Recent search */}
         <div className="m-5 p">
             {ListContainerSong.map((song) => {
-                return (
-                    <BarreSong
-                    key={song.artist}
-                    artist={song.artist}
-                    song={song.song}
-                    image={song.image}
-                    onClick={() => alert(`yu clicked for ${song.artist}`)}
-                    />
-                )
+             return <BarreSong
+              key={song.id}
+              id={song.id}
+              artist={song.artist}
+              song={song.song}
+              image={song.image}
+              />
             })}
         </div>
         {/* Récommandations */}

@@ -18,9 +18,12 @@ const HomePage = () => {
         <div className="cont-profile flex  justify-between items-center p-3">
             <h1 className="text-2xl font-bold text-white">Bonjour , <span> John Doe</span></h1>
             <div className="cont-profile ml-20 flex justify-center items-center">
-            <img src="../../public/assets/notify.png" alt="notify icon" className="size-16 object-cover" />
+            <Link to="">
+              <img src="../../public/assets/notify.png" alt="notify icon" className="size-10 md:size-16 object-cover" />
+              {/* <span className="bg-red-500 rounded-full text-white">0</span> */}
+            </Link>
             {/* <img src="https://img.icons8.com/color/48/000000/expand-arrow.png" alt="dropdown" /> */}
-            <Link to="/pages/Profile.tsx">
+            <Link to="/pages/Profile">
                 <img src="https://img.icons8.com/color/48/000000/user-male-circle.png" alt="profile" />
             </Link>
           </div>
@@ -29,7 +32,7 @@ const HomePage = () => {
         <Barre
          title= "Mes pages favorites"
          buttonText = "voir plus"
-         buttonLink='/pages/inscrption.tsx'
+         buttonLink='/pages/inscrption'
 
         />
         {/* Card of feature */}
@@ -42,7 +45,7 @@ const HomePage = () => {
         <Barre
          title= "Recommandations"
          buttonText = "voir plus"
-         buttonLink='/pages/inscrption.tsx'
+         buttonLink='/pages/inscrption'
 
         />
         {/* card propose */}
@@ -56,20 +59,20 @@ const HomePage = () => {
          <Barre
          title= "Chansons populaires"
          buttonText = "voir plus"
-         buttonLink='/pages/inscrption.tsx'
+         buttonLink='/pages/inscrption'
 
         />
         {/* List popular song */}
         <div className="mt-5">
-            {ListContainerSong.map((song) => (
-                <BarreSong
-                key={song.artist}
-                artist={song.artist}
-                song={song.song}
-                image={song.image}
-                onClick={() => alert(`yu clicked for ${song.artist}`)}
-                />
-            ))}
+          {ListContainerSong.map((song) => (
+            <BarreSong
+              key={song.id}
+              id={song.id}
+              artist={song.artist}
+              song={song.song}
+              image={song.image}
+            />
+          ))}
         </div>
       </div>
     </div>

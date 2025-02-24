@@ -14,8 +14,8 @@ export const Card = ({ title, image, description }: CardProps) => {
                 <img className="object-cover w-full h-full" src={image} alt={title} />
             </div>
             <div className="rounded-2xl card-body absolute top-0 w-44 md:w-72 h-40 flex justify-center items-center flex-col bg-blue-700/50">
-                <h5 className="card-title font-bold text-purple-300 font-serif text-xl">{title}</h5>
-                <p className="card-text font-extrabold text-white font-sans text-2xl">{description}</p>
+                <h5 className="card-title font-bold text-zinc-100 font-serif text-xl">{title}</h5>
+                <p className="card-text font-thin text-white font-sans text-2xl">{description}</p>
             </div>
            </div>
         </div>
@@ -26,7 +26,7 @@ export const Card = ({ title, image, description }: CardProps) => {
 
 export const CardContainer = ({ cards }: { cards: CardProps[] }) => {
     return (
-        <div className="flex justify-center items-center gap-2 flex-wrap">
+        <div className="grid grid-cols-2 md:grid-cols-4 items-center gap-10">
             {cards.map((card) => (
                 <Card key={card.title} {...card} />
             ))}

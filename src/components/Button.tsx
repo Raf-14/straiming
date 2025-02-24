@@ -1,19 +1,15 @@
 import React from 'react';
 
 interface ButtonProps {
-  title: string;
+  children: string;
   className: string;
   disabled?: boolean;
-  type: string;
+  type: 'submit' | 'button' | 'reset';
   onClick?: () => void;
 }
 
-const SIZE = {
-  xs: 'w-xs h-10',
-};
-
 const Button: React.FC<ButtonProps> = ({
-  title,
+  children,
   className,
   disabled = false,
   type,
@@ -26,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       onClick={onClick}
     >
-      {title}
+      {children}
     </button>
   );
 };
