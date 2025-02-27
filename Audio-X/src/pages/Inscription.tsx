@@ -33,6 +33,14 @@ interface SignUpProps {
           className="border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
         />
         <Input
+          type="text"
+          name="last_name"
+          placeholder="your last name"
+          value={formData.name}
+          onChange={handleChange}
+          className="border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+        />
+        <Input
           type="email"
           name="email"
           placeholder="email"
