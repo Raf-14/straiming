@@ -1,17 +1,13 @@
-import React from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
+import { FavoritePagesProps } from '../types/interfaces';
 
-interface FavoritePagesProps {
-  title: string;
-  buttonText: string;
-  buttonLink: string;
-}
 
-const Barre: React.FC<FavoritePagesProps> = ({ title, buttonText, buttonLink }) => {
+const Barre:FC<FavoritePagesProps> = ({ title, buttonText, buttonLink }) => {
   return (
-    <div className="flex justify-between items-center gap-5 mt-5">
-      <h2 className="text-2xl font-bold text-white">{title}</h2>
-      <Link to={buttonLink} className="flex justify-center items-center w-24 h-10 cursor-pointer rounded-full text-white bg-gray-600 hover:bg-gray-500 transition-bg duration-300">
+    <div className="flex items-center w-full h-10 gap-5 mt-5 md:justify-between">
+      <h2 className="font-bold text-white text-md md:text-2xl">{title}</h2>
+      <Link to={buttonLink} className="flex items-center justify-center w-24 h-10 text-sm text-white duration-300 bg-gray-600 rounded-full cursor-pointer md:text:md hover:bg-gray-500 transition-bg">
           {buttonText}
       </Link>
     </div>

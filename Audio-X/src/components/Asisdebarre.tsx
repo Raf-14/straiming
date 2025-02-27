@@ -18,7 +18,7 @@ export default function Asisdebarre() {
         transition={{ duration: 0.5 }}>
           {/* Menu burger */}
         
-        <button onClick={toggleMenu} className="absolute top-0 left-0 p-4 cursor-pointer z-20">
+        <button onClick={toggleMenu} className="absolute top-0 left-0 z-20 p-4 mt-10 cursor-pointer">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
@@ -26,24 +26,24 @@ export default function Asisdebarre() {
 
             {/* Aside barre */}
             <div className={`Aside ${isOpen ? 'translate-x-0' : '-translate-x-full'} w-1/2 md:w-1/4 h-screen bg-gray-700 text-white transition-transform duration-300 fixed top-0 left-0`}>
-                <nav className="flex flex-col mt-10 gap-5 h-full justify-between items-center px-6 py-4" role="navigation" aria-label="Navigation principale">
-                    <ul className="flex flex-col gap-5 w-full" role="list" aria-label="Liste des liens">
+                <nav className="flex flex-col items-center justify-between h-full gap-5 px-6 py-4 mt-30" role="navigation" aria-label="Navigation principale">
+                    <ul className="flex flex-col w-full gap-5" role="list" aria-label="Liste des liens">
                         <li className="flex items-center w-full">
-                            <Link to="/pages/Homepage" className="flex items-center md:justify-around h-12">
-                                <Home className="text-gray-400 hover:text-white cursor-pointer" size={28} />
-                                <span className="text-white text-xl font-bold font-serif">Accueil</span>
+                            <Link to="/pages/Homepage" className="flex items-center h-12 md:justify-around">
+                                <Home className="text-gray-400 cursor-pointer hover:text-white" size={28} />
+                                <span className="font-serif text-xl font-bold text-white">Accueil</span>
                             </Link>
                         </li>
                         <li className="flex items-center">
-                            <Link to="/pages/Searchpage" className="flex items-center md:justify-around h-12">
-                                <Search className="text-gray-400 hover:text-white cursor-pointer" size={28} />
-                                <span className="text-white text-xl font-bold font-serif">Recherche</span>
+                            <Link to="/pages/Searchpage" className="flex items-center h-12 md:justify-around">
+                                <Search className="text-gray-400 cursor-pointer hover:text-white" size={28} />
+                                <span className="font-serif text-xl font-bold text-white">Recherche</span>
                             </Link>
                         </li>
                         <li className="flex items-center">
-                            <Link to="/pages/Bibliotehque" className="flex items-center md:justify-around h-12">
-                                <BookOpen className="text-gray-400 hover:text-white cursor-pointer" size={28} />
-                                <span className="text-white text-xl font-bold font-serif">Bibliothèque</span>
+                            <Link to="/pages/Bibliotehque" className="flex items-center h-12 md:justify-around">
+                                <BookOpen className="text-gray-400 cursor-pointer hover:text-white" size={28} />
+                                <span className="font-serif text-xl font-bold text-white">Bibliothèque</span>
                             </Link>
                         </li>
                     </ul>

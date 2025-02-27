@@ -1,3 +1,25 @@
+import { CardProps } from "../types/interfaces";
+
+
+// Données des cartes pour tester
+export const cardsData: CardProps[] = [
+  {
+    title: "Carte 1",
+    image: "/assets/profile.jpg",
+    description: "Description 1",
+  },
+  {
+    title: "Carte 2",
+    image: "/assets/profile.jpg",
+    description: "Description 2",
+  },
+  {
+    title: "Carte 3",
+    image: "/assets/profile.jpg",
+    description: "Description 3",
+  },
+];
+
 export const cards = [
     {
         id: 1,

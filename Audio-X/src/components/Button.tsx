@@ -1,14 +1,9 @@
-import React from 'react';
+import { FC } from 'react';
+import { ButtonProps } from '../types/interfaces';
 
-interface ButtonProps {
-  children: string;
-  className: string;
-  disabled?: boolean;
-  type: 'submit' | 'button' | 'reset';
-  onClick?: () => void;
-}
 
-const Button: React.FC<ButtonProps> = ({
+
+const Button: FC<ButtonProps> = ({
   children,
   className,
   disabled = false,

@@ -28,3 +28,24 @@ main.jsx : Le point d'entrée de l'application.
 vite.config.js : Le fichier de configuration de Vite.
 
 package.json : Le fichier de configuration du projet.
+
+1️⃣ Initialisation de TypeScript dans le projet
+
+npm init -y  # Si le projet n'a pas de package.json
+npm install typescript ts-node @types/node -D
+npx tsc --init  # Générer le fichier tsconfig.json
+
+2️⃣ Installation  des dépendances avec leurs types
+
+npm install express mongoose dotenv cors
+npm install @types/express @types/node -D
+
+3️⃣ Structurer du projet backend en TypeScript
+/src
+  /controllers
+  /routes
+  /models
+  /middlewares
+  /config
+  /utils
+  index.ts

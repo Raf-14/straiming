@@ -41,12 +41,12 @@ interface LogInProps {
     }
   };
   return (
-    <div className="bg-gray-800 w-full h-screen">
+    <div className="w-full h-screen bg-gray-800">
           <form onSubmit={handleSubmit}
               className={`w-full max-w-md mx-auto p-6 flex flex-col justify-center items-center`}
               >
                   <h2 className="text-2xl font-semibold text-gray-800 uppercase">Welcome back</h2>
-                  <h3 className="text-xl font-semibold text-gray-800 mt-4">Sign in to discover, stream, and enjoy millions of songs</h3>
+                  <h3 className="mt-4 text-xl font-semibold text-gray-800">Sign in to discover, stream, and enjoy millions of songs</h3>
                   <Input
                       type="email"
                       name="email"
@@ -61,37 +61,37 @@ interface LogInProps {
                     placeholder="password"
                     value={formData.password}
                     onChange={handleChange}
-                    className="border border-zinc-200  font-serif focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+                    className="font-serif border border-zinc-200 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
                   />
                   {error && (
-                      <p className="text-red-500 font-thin text-2xl font-serif" role="alert">
+                      <p className="font-serif text-sm font-thin text-red-500 md:text-2xl" role="alert">
                       {error}
                     </p>
                   )}
                 
                 <Button
                     type="submit"
-                    className="mt-4 w-xl bg-purple-600 rounded-2xl m-2 hover:bg-purple-400 text-white font-serif text-uppercase font-bold"
+                    className="m-2 mt-4 font-serif font-bold text-white bg-purple-600 w-80 md:w-xl rounded-2xl hover:bg-purple-400 text-uppercase"
                     disabled={isLoading}>
                     {isLoading ? 'Chargement...' : 'Connexion'}
                   </Button>
                   {/* forgot password */}
-                  <p className="text-zinc-100 mt-4"><a href="#"><span className="underline text-zinc-100">Mot de passe oublié</span> ?</a></p>
-                  <p className="text-zinc-100 mt-4"><span className="underline mr-5 text-black">Linkdedine</span> ou continuer avec <span className="underline text-black ml-5">Tinder</span></p>
-                  <div className="container-button w-md flex justify-center items-center gap-5">
+                  <p className="mt-4 text-zinc-100"><a href="#"><span className="underline text-zinc-100">Mot de passe oublié</span> ?</a></p>
+                  <p className="mt-4 text-zinc-100"><span className="mr-5 text-black underline">Linkdedine</span> ou continuer avec <span className="ml-5 text-black underline">Tinder</span></p>
+                  <div className="flex items-center justify-center gap-5 container-button w-md">
                   <Button
                     type="button"
-                    className="mt-4 w-xs bg-white rounded-md"
+                    className="mt-4 text-sm bg-white rounded-md md:text-md w-30 md:w-xs"
                     disabled={false}
                     >Google (français)</Button>
                     <Button
                     type="button"
-                    className="mt-4 w-xs bg-white rounded-md"
+                    className="mt-4 text-sm bg-white rounded-md w-30 md:w-xs md:text-md"
                     disabled={false}>
                       Facebook
                     </Button>
                   </div>
-                  <p className="text-zinc-100 mt-4">have'nt account? <a href="./inscrption.tsx" className="text-blue-600">Register</a></p>  
+                  <p className="mt-4 text-zinc-100">have'nt account? <a href="./inscrption" className="text-blue-600">Register</a></p>  
               </form>
     </div>
    

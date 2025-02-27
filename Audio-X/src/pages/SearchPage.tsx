@@ -8,7 +8,7 @@ import { cards3, ListContainerSong } from '../utils/cards'
 
 export default function SearchPage() {
   return (
-    <div className="flex flex-col bg-gray-800 min-h-screen p-5">
+    <div className="flex flex-col min-h-screen p-5 bg-gray-800">
         {/* AsideBar */}
         <Asisdebarre />
         {/* Search Bar */}
@@ -16,11 +16,11 @@ export default function SearchPage() {
             <SearchBarre />
         </div>
         {/* barre */}
-       <div className="m-5 p-5 text-white">
+       <div className="p-5 m-5 text-white">
        <Barre
             title="Recent searches"
             buttonText="Clear"
-            buttonLink="/pages/resultat.tsx"
+            buttonLink="/pages/resultat"
             />
        </div>
         {/* Recent search */}
@@ -36,11 +36,11 @@ export default function SearchPage() {
             })}
         </div>
         {/* Récommandations */}
-        <div className="m-5 p-5 text-white">
+        <div className="p-5 m-5 text-white">
             <Barre
             title="Basée sur ce que vous aimé"
             buttonText="Voir plus"
-            buttonLink="/pages/recommandation.tsx"
+            buttonLink="/pages/recommandation"
             />
         </div>
         {/* Liste de chansons */}
